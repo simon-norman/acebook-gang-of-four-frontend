@@ -1,21 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 import Post from './Post'
 
-let posts = [
-  { message: 'stuff' },
-  { message: 'stuff' },
-  { message: 'stuff' },
-  { message: 'stuff' },
-]
+class Timeline extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        posts: this.getPosts()
+    };
+  }
 
-function Timeline() {
-  return (
-    <div>
-       { posts.map(post => {
-        return <Post message={post.message} />
-      }) }
-    </div>
-  )
+  async getPosts() {
+    try {
+      this.state.posts = await axios.get('http://localhost:4000/posts')
+    } catch(error) {
+      console.log(error.reponse)
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        { this.state.posts.map(post => {
+          return <Post message={post.message} />
+        }) }
+      </div>
+    )
+    }
 }
 
 export default Timeline;
