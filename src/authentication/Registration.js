@@ -30,13 +30,22 @@ class Registration extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Sign Up</h2>
+      <div className='center-form'>
+        <div className='form-title'>Sign Up</div>
         <form onSubmit={this.registerUser}>
-          Email: <input type='email' name='email' onChange={this.handleInputChange}/><br></br>
-          Password: <input type='password' name='password' onChange={this.handleInputChange}/><br></br>
-          Confirm Password: <input type='password' name='password_confirmation' onChange={this.handleInputChange}/><br></br>
-          <input type='submit'/>
+          <div className='form-item'>
+            Email: 
+            <input type='email' name='email' onChange={this.handleInputChange} className='form-control'/>
+          </div>
+          <div className='form-item'>
+            Password: 
+            <input type='password' name='password' onChange={this.handleInputChange} className='form-control'/>
+          </div>
+          <div className='form-item'>
+            Confirm Password: 
+            <input type='password' name='password_confirmation' onChange={this.handleInputChange} className='form-control'/>
+          </div>
+          <input type='submit' className="btn btn-outline-primary"/>
         </form>
       </div>
     )
