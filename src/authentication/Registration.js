@@ -31,16 +31,16 @@ class Registration extends Component {
   render() {
     return (
       <div>
-      <h2>Sign Up</h2>
-      <form onSubmit={this.registerUser}>
-        Email: <input type='email' name='email' onChange={this.handleInputChange}/><br></br>
-        Password: <input type='password' name='password' onChange={this.handleInputChange}/><br></br>
-        Confirm Password: <input type='password' name='password_confirmation' onChange={this.handleInputChange}/><br></br>
-        <input type='submit'/>
+        <h2>Sign Up</h2>
+        <form onSubmit={this.registerUser}>
+          Email: <input type='email' name='email' onChange={this.handleInputChange}/><br></br>
+          Password: <input type='password' name='password' onChange={this.handleInputChange}/><br></br>
+          Confirm Password: <input type='password' name='password_confirmation' onChange={this.handleInputChange}/><br></br>
+          <input type='submit'/>
         </form>
-        </div>
+      </div>
     )
-    }
+  }
 }
 
 export default Registration;
