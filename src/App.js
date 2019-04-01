@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import Timeline from './Timeline'
-import Registration from './Registration'
+import Registration from './authentication/Registration'
 import './App.css';
 
 class App extends Component {
