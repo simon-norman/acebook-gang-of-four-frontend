@@ -48,20 +48,20 @@ body {
   flex-flow: column;
 }
 
-.navbar-brand {
+nav.navbar-brand {
   color: #20c997;
   font-weight: bold;
   font-size: x-large;
   margin-bottom: 100px;
 }
 
-.btn-outline-primary {
+button.btn-outline-primary {
   color: #20c997;
   background-color: white;
   border-color:  #20c997;
 }
 
-.btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
+button.btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
   background-color: #20c997;
   color: white;
   border-color:  white;
