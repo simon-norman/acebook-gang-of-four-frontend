@@ -20,14 +20,17 @@ class Timeline extends Component {
 
   getPosts() {
     return [
-      {message: "Hello", 
+      {id: 1,
+      message: "Hello", 
        userId: 1,
        createdAt: "2019-03-22"
       },
-      {message: "I'm new here", 
+      {id: 2,
+      message: "I'm new here", 
       userId: 1,
       createdAt: "2019-03-23"},
-      {message: "Please like my post!", 
+      {id: 3,
+      message: "Please like my post!", 
       userId: 2,
       createdAt: "2019-03-24"}
     ]
@@ -36,8 +39,8 @@ class Timeline extends Component {
   render() {
     return (
       <div>
-        { this.state.posts.map(post => {
-          return <Post post={post} />
+        { this.state.posts.map((post, i) => {
+          return <Post post={post} key={i}/>
         }) }
       </div>
     )

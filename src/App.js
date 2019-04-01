@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar/>
-        <Timeline name='Simn' />
+        <Timeline name='Simon' />
       </div>
     );
   }

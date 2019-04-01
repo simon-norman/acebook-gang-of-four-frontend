@@ -2,7 +2,7 @@ import React from 'react';
 
 function Post(props) {
   return (
-    <div className="card">
+    <div className="card" id={props.post.id}>
       <div className="card-header">
         <div>{props.post.userId}</div>
         <div>{props.post.createdAt}</div>
