@@ -1,6 +1,6 @@
 const signIn = {
-  completeSignIn: function(user) {
-    sessionStorage.setItem('user', user)
+  completeSignIn: function(userCredentials) {
+    sessionStorage.setItem('user', userCredentials)
   }
 }
 

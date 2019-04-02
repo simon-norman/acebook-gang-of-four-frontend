@@ -8,8 +8,13 @@ const registrationApi = {
 
     xhttp.onreadystatechange = function () {
       if (xhttp.readyState === 4 && xhttp.status === 200) {
-        const json = JSON.parse(xhttp.responseText)
-        callback(json)
+        const userCredentials = {
+          'access-token': xhttp.getResponseHeader('access-token'),
+          client: xhttp.getResponseHeader('client'),
+          uid: xhttp.getResponseHeader('uid')
+        }
+        debugger;
+        callback(userCredentials)
       }
       else {console.log("This hasn't worked")}
     }

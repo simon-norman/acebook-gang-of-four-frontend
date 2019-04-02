@@ -23,8 +23,8 @@ class Registration extends Component {
     registrationApi.register(this.state, this.loginUser)
   }
 
-  loginUser(userSessionData) {
-    signIn.completeSignIn(userSessionData)
+  loginUser(userCredentials) {
+    signIn.completeSignIn(userCredentials)
     this.props.history.push('/posts')
   }
 
