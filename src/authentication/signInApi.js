@@ -13,6 +13,7 @@ const signInApi = {
           client: xhttp.getResponseHeader('client'),
           uid: xhttp.getResponseHeader('uid')
         }
+        console.log(userCredentials)
         callback(userCredentials)
       }
       else {console.log("This hasn't worked")}
@@ -22,7 +23,12 @@ const signInApi = {
     xhttp.send(data)
   },
 
-    completeSignIn: function(userCredentials) {
+    completeSignIn: function(xhttp) {
+      const userCredentials = {
+        'access-token': xhttp.getResponseHeader('access-token'),
+        client: xhttp.getResponseHeader('client'),
+        uid: xhttp.getResponseHeader('uid')
+      }
       sessionStorage.setItem('user', userCredentials)
     }
   }

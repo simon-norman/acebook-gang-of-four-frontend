@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import registrationApi from './registrationApi';
-import signIn from './signInApi';
+import signInApi from './signInApi';
 
 class Registration extends Component {
   constructor(props){
@@ -24,7 +24,7 @@ class Registration extends Component {
   }
 
   loginUser(userCredentials) {
-    signIn.completeSignIn(userCredentials)
+    signInApi.completeSignIn(userCredentials)
     this.props.history.push('/posts')
   }
 
