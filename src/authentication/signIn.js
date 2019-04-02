@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import signInApi from './signInApi';
+import authenticationApi from './authenticationApi';
 
 class SignIn extends Component {
   constructor(props){
@@ -7,7 +7,7 @@ class SignIn extends Component {
     this.state = {}
     this.handleInputChange = this.handleInputChange.bind(this);
     this.signInUser = this.signInUser.bind(this);
-    this.loginUser = this.loginUser.bind(this);
+    this.redirectToTimeline = this.redirectToTimeline.bind(this);
   }
 
 
@@ -20,11 +20,10 @@ handleInputChange(event){
 
 signInUser(event) {
   event.preventDefault();
-  signInApi.signIn(this.state, this.loginUser)
+  authenticationApi.signIn(this.state, this.redirectToTimeline)
 }
 
-loginUser(userCredentials) {
-  signInApi.completeSignIn(userCredentials)
+redirectToTimeline() {
   this.props.history.push('/posts')
 }
 
@@ -32,7 +31,7 @@ render() {
   return (
     <div className='center-form'>
       <div className='form-title'>Sign In</div>
-      <form onSubmit={this.signInUser}>
+      <form onSubmit={this.signInUser()}>
         <div className='form-item'>
           Email: 
           <input type='email' name='email' onChange={this.handleInputChange} className='form-control'/>

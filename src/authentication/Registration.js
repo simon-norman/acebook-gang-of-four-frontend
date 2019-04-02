@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import registrationApi from './registrationApi';
-import signInApi from './signInApi';
+import authenticationApi from './authenticationApi';
 
 class Registration extends Component {
   constructor(props){
@@ -8,7 +7,7 @@ class Registration extends Component {
     this.state = {}
     this.handleInputChange = this.handleInputChange.bind(this);
     this.registerUser = this.registerUser.bind(this);
-    this.loginUser = this.loginUser.bind(this);
+    this.redirectToTimeline = this.redirectToTimeline.bind(this);
   }
 
   handleInputChange(event){
@@ -20,11 +19,10 @@ class Registration extends Component {
 
   registerUser(event) {
     event.preventDefault();
-    registrationApi.register(this.state, this.loginUser)
+    authenticationApi.register(this.state, this.redirectToTimeline)
   }
 
-  loginUser(userCredentials) {
-    signInApi.completeSignIn(userCredentials)
+  redirectToTimeline() {
     this.props.history.push('/posts')
   }
 

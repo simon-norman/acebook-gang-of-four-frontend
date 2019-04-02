@@ -1,5 +1,5 @@
 const api = {
-  call: function(data,verb,url, callback) {
+  call: function(data, verb, url, callback) {
     const xhttp = new XMLHttpRequest();
 
     xhttp.open(verb, url, true);
@@ -7,7 +7,6 @@ const api = {
 
     xhttp.onreadystatechange = function () {
       if (xhttp.readyState === 4 && xhttp.status === 200) {
-        console.log(xhttp)
         callback(xhttp)
       }
       else {console.log("This hasn't worked")}
