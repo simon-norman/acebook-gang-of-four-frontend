@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import Post from './Post';
-import "../test-setup.js";
+import "../../test-setup.js";
 
 it('should render div for a post', () => {
     const mockPost = 
@@ -13,7 +13,6 @@ it('should render div for a post', () => {
       ;
 
     const wrapper = shallow(<Post post={mockPost} />);
-    console.log("wrapper" + wrapper.html());
     expect(wrapper.html()).toEqual('<div class="card" id="1"><div class="card-header"><div>1</div><div>2019-03-22</div></div><div class="card-body"><div>Hello</div></div></div>');
 
 })
