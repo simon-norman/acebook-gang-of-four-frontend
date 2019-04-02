@@ -24,6 +24,7 @@ signInUser(event) {
 }
 
 redirectToTimeline() {
+  console.log(this.props)
   this.props.history.push('/posts')
 }
 
@@ -31,7 +32,7 @@ render() {
   return (
     <div className='center-form'>
       <div className='form-title'>Sign In</div>
-      <form onSubmit={this.signInUser()}>
+      <form onSubmit={this.signInUser}>
         <div className='form-item'>
           Email: 
           <input type='email' name='email' onChange={this.handleInputChange} className='form-control'/>

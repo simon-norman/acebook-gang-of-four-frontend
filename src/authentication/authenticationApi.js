@@ -15,15 +15,19 @@ const authenticationApi = {
 
   completeSignIn: function(callback) {
     return function(xhttp) {
-      const userCredentials = {
+      const userCredentials = JSON.stringify({
         'access-token': xhttp.getResponseHeader('access-token'),
         client: xhttp.getResponseHeader('client'),
         uid: xhttp.getResponseHeader('uid')
-      }
+      })
       sessionStorage.setItem('user', userCredentials)
 
       callback()
     }
+  },
+  logOut: function(callback) {
+    const sessionUser = sessionStorage.user
+    api.call(JSON.parse(sessionUser),'DELETE','http://localhost:4000/auth/sign_out', callback)
   }
 }
 

@@ -11,7 +11,6 @@ const api = {
       }
       else {console.log("This hasn't worked")}
     }
-
     xhttp.send(JSON.stringify(data))
   }
 }
