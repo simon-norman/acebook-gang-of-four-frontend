@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import registrationApi from './registrationApi';
-import signIn from './signIn';
+import signIn from './signInApi';
 
 class Registration extends Component {
   constructor(props){

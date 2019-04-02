@@ -4,6 +4,7 @@ import NavBar from './NavBar'
 import './App.scss';
 import Registration from './authentication/Registration'
 import { BrowserRouter, Route } from 'react-router-dom';
+import SignIn from './authentication/SignIn';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
           <BrowserRouter>
             <Route path='/sign-up' component={Registration}/>
             <Route path='/posts' component={Timeline}/>
+            <Route path='/sign-in' component={SignIn}/>
           </BrowserRouter>
         </div>
       </div>

@@ -1,9 +1,9 @@
-const registrationApi = {
-  register: function(user, callback) {
+const signInApi = {
+  signIn: function(user, callback) {
     const xhttp = new XMLHttpRequest();
-    const url = 'http://localhost:4000/auth'
+    const url = 'http://localhost:4000/auth/sign_in'
 
-    xhttp.open("POST", url, true);
+    xhttp.open ("POST", url, true);
     xhttp.setRequestHeader("Content-Type", "application/json");
 
     xhttp.onreadystatechange = function () {
@@ -20,7 +20,11 @@ const registrationApi = {
 
     const data = JSON.stringify(user)
     xhttp.send(data)
-  }
-}
+  },
 
-export default registrationApi;
+    completeSignIn: function(userCredentials) {
+      sessionStorage.setItem('user', userCredentials)
+    }
+  }
+
+export default signInApi;
