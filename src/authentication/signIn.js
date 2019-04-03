@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import authenticationApi from './authenticationApi';
+import authentication from './authentication';
+import { Link } from 'react-router-dom'
 
 class SignIn extends Component {
   constructor(props){
@@ -20,7 +21,7 @@ handleInputChange(event){
 
 signInUser(event) {
   event.preventDefault();
-  authenticationApi.signIn(this.state, this.redirectToTimeline)
+  authentication.signIn(this.state, this.redirectToTimeline)
 }
 
 redirectToTimeline() {
@@ -42,6 +43,10 @@ render() {
           <input type='password' name='password' onChange={this.handleInputChange} className='form-control'/>
         </div>
         <input type='submit' className="btn btn-outline-primary"/>
+        <div className='sign-up-msg'>
+          New to Acebook?
+          <Link to="/sign-up"> Sign up here!</Link>
+        </div>
       </form>
     </div>
   )

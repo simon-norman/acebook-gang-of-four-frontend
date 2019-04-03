@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import authenticationApi from './authentication/authenticationApi';
+import authentication from './authentication/authentication';
 import { withRouter } from 'react-router-dom';
 
 class NavBar extends Component {
@@ -22,7 +22,7 @@ class NavBar extends Component {
 
   logOut(){
     if (sessionStorage.user) {
-      authenticationApi.logOut(this.redirectToSignIn)
+      authentication.logOut(this.redirectToSignIn)
     }
   }
 

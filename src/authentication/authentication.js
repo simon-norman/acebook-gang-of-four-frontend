@@ -1,8 +1,8 @@
 import api from '../api.js'
 import { Redirect } from 'react-router-dom'
-import React, { Component } from 'react';
+import React from 'react';
 
-const authenticationApi = {
+const authentication = {
   authenticate: function(user, url, callback) {
     api.call(user, 'POST', url, this.completeSignIn(callback))
   },
@@ -45,4 +45,4 @@ const authenticationApi = {
   }
 }
 
-export default authenticationApi;
+export default authentication;

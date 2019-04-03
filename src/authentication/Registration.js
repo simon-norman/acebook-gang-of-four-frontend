@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import authenticationApi from './authenticationApi';
+import authentication from './authentication';
 
 class Registration extends Component {
   constructor(props){
@@ -19,7 +19,7 @@ class Registration extends Component {
 
   registerUser(event) {
     event.preventDefault();
-    authenticationApi.register(this.state, this.redirectToTimeline)
+    authentication.register(this.state, this.redirectToTimeline)
   }
 
   redirectToTimeline() {
