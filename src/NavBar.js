@@ -11,10 +11,10 @@ class NavBar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbarDefault navbarFixedTop bgLight">
+      <nav className="navbar navbar-default navbar-fixed-top bg-light">
         <div className="container">
-          <a className='navbarBrand' href="/">Acebook</a>
-          <button onClick={this.logOut} className="btn btnOutlinePrimary">Log out</button>
+          <a className='navbar-brand' href="/">Acebook</a>
+          <button onClick={this.logOut} className="btn btn-outline-primary">Log out</button>
         </div>
       </nav>
     );
