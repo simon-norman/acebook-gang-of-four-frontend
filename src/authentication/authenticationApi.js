@@ -25,9 +25,14 @@ const authenticationApi = {
       callback()
     }
   },
+
   logOut: function(callback) {
     const sessionUser = sessionStorage.user
-    api.call(JSON.parse(sessionUser),'DELETE','http://localhost:4000/auth/sign_out', callback)
+    
+    api.call(JSON.parse(sessionUser),'DELETE','http://localhost:4000/auth/sign_out', function() {
+      sessionStorage.removeItem('user')  
+      callback()
+    })
   }
 }
 

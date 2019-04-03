@@ -9,7 +9,7 @@ class NavBar extends Component {
     this.redirectToSignIn = this.redirectToSignIn.bind(this);
   }
 
-  render(){
+  render() {
     return (
       <nav className="navbar navbarDefault navbarFixedTop bgLight">
         <div className="container">
@@ -21,12 +21,12 @@ class NavBar extends Component {
   }
 
   logOut(){
-    if (sessionStorage.user){
-    authenticationApi.logOut(this.redirectToSignIn)}
+    if (sessionStorage.user) {
+      authenticationApi.logOut(this.redirectToSignIn)
+    }
   }
-  redirectToSignIn(){
-    sessionStorage.removeItem('user')
-    console.log(this.props)
+
+  redirectToSignIn() {
     this.props.history.push('/sign-in')
   }
 }
