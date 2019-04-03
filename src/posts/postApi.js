@@ -1,7 +1,7 @@
 const postApi = {
   getPosts: function(callback) {
     const xhttp = new XMLHttpRequest();
-    const url = 'http://localhost:4000/auth'
+    const url = 'http://localhost:4000/posts'
 
     xhttp.open("POST", url, true);
     xhttp.setRequestHeader("Content-Type", "application/json");

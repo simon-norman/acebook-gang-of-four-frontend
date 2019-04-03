@@ -4,7 +4,7 @@ import NavBar from './NavBar'
 import './App.scss';
 import Registration from './authentication/Registration'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import SignIn from './authentication/SignIn';
+import SignIn from './authentication/signIn';
 
 class App extends Component {
   render() {
