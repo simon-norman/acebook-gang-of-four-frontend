@@ -1,7 +1,9 @@
+import config from '../config.js';
+
 const postApi = {
   getPosts: function(callback) {
     const xhttp = new XMLHttpRequest();
-    const url = 'http://localhost:4000/posts'
+    const url = `${config.acebookApi}/posts`
 
     xhttp.open("GET", url, true);
     xhttp.setRequestHeader( "Content-Type", "application/json");

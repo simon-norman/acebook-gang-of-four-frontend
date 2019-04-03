@@ -1,4 +1,5 @@
 import api from '../api.js'
+import config from '../config.js'
 import { Redirect } from 'react-router-dom'
 import React from 'react';
 
@@ -8,11 +9,11 @@ const authentication = {
   },
 
   register: function(user, callback) {
-    this.authenticate(user,'http://localhost:4000/auth', callback)
+    this.authenticate(user,`${config.acebookApi}/auth`, callback)
   },
 
   signIn: function(user, callback) {
-    this.authenticate(user,'http://localhost:4000/auth/sign_in', callback)
+    this.authenticate(user,`${config.acebookApi}/auth/sign_in`, callback)
   },
 
   completeSignIn: function(callback) {
@@ -31,7 +32,7 @@ const authentication = {
   logOut: function(callback) {
     const sessionUser = sessionStorage.user
     
-    api.call(JSON.parse(sessionUser),'DELETE','http://localhost:4000/auth/sign_out', function() {
+    api.call(JSON.parse(sessionUser),'DELETE',`${config.acebookApi}/auth/sign_out`, function() {
       sessionStorage.removeItem('user')  
       callback()
     })
