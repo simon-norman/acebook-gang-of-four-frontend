@@ -1,17 +1,26 @@
 const api = {
-  call: function(data, verb, url, callback) {
+  call: function(data, verb, url, callback, headers) {
     const xhttp = new XMLHttpRequest();
 
     xhttp.open(verb, url, true);
     xhttp.setRequestHeader("Content-Type", "application/json");
 
-    xhttp.onreadystatechange = function () {
-      if (xhttp.readyState === 4 && xhttp.status === 200) {
-        callback(xhttp)
+    const xhttpWithHeaders = this.setHeaders(xhttp, headers)
+
+    xhttpWithHeaders.onreadystatechange = function () {
+      if (xhttpWithHeaders.readyState === 4 && xhttpWithHeaders.status === 200) {
+        callback(xhttpWithHeaders)
       }
       else {console.log("This hasn't worked")}
     }
-    xhttp.send(JSON.stringify(data))
+    xhttpWithHeaders.send(JSON.stringify(data))
+  },
+
+  setHeaders: function(xhttp, headers) {
+    for (const headerKey in headers) {
+      xhttp.setRequestHeader(headerKey, headers[headerKey]);
+    }
+    return xhttp
   }
 }
 

@@ -5,7 +5,11 @@ class CreatePost extends Component {
     constructor(props) {
       super(props);
       const sessionUser = sessionStorage.user
-      this.state = { userId: JSON.parse(sessionUser).userId};
+      this.state = { userId: JSON.parse(sessionUser).userId };
+
+      this.handleInputChange = this.handleInputChange.bind(this);
+      this.createPost = this.createPost.bind(this);
+      this.redirectToTimeline = this.redirectToTimeline.bind(this);
     }
   
     handleInputChange(event){
@@ -17,7 +21,11 @@ class CreatePost extends Component {
 
     createPost(event) {
         event.preventDefault();
-        postApi.createPost(this.state, this.redirectToTimeline)
+        const post = {
+          user_id: this.state.userId,
+          message: this.state.message
+        }
+        postApi.createPost({ post }, this.redirectToTimeline)
     }
 
     redirectToTimeline() {

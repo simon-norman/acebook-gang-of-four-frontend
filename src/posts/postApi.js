@@ -3,7 +3,8 @@ import api from '../api.js'
 
 const postApi = {
   createPost: function(post, callback) {
-    api.call(post, 'POST', `${config.acebookApi}/posts/new`, callback)
+    const authHeaders = JSON.parse(sessionStorage.user)
+    api.call(post, 'POST', `${config.acebookApi}/posts`, callback, authHeaders)
   },
 
   getPosts: function(callback) {
