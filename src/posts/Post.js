@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
+import UpdateButton from './UpdateButton'
+class Post extends Component {
 
-function Post(props) {
-  return (
-    <div className="card" id={props.post.id}>
-      <div className="card-header">
-        <div>{props.post.user.email}</div>
-        <div>{props.post.created_at}</div>
+  render() {
+    return (
+      <div className="card" id={this.props.post.id}>
+        <div className="card-header">
+          <div>{this.props.post.user.email}</div>
+          <div>{this.props.post.created_at}</div>
+        </div>
+        <div className="card-body">
+          <div>{this.props.post.message}</div>
+        </div>
+        <div>
+          <UpdateButton email={this.props.post.user.email} />
+        </div>
       </div>
-      <div className="card-body">
-        <div>{props.post.message}</div>
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Post;
