@@ -17,7 +17,7 @@ class App extends Component {
             <Route path='/sign-up' component={Registration}/>
             <Route path='/posts' component={Timeline}/>
             <Route path='/sign-in' component={SignIn}/>
-            </Switch>
+          </Switch>
         </div>
         </BrowserRouter>
       </div>
