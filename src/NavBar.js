@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import authenticationApi from './authentication/authenticationApi';
+import authentication from './authentication/authentication';
 import { withRouter } from 'react-router-dom';
 
 class NavBar extends Component {
@@ -11,10 +11,10 @@ class NavBar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbarDefault navbarFixedTop bgLight">
+      <nav className="navbar navbar-default navbar-fixed-top bg-light">
         <div className="container">
-          <a className='navbarBrand' href="/">Acebook</a>
-          <button onClick={this.logOut} className="btn btnOutlinePrimary">Log out</button>
+          <a className='navbar-brand' href="/">Acebook</a>
+          <button onClick={this.logOut} className="btn btn-outline-primary">Log out</button>
         </div>
       </nav>
     );
@@ -22,7 +22,7 @@ class NavBar extends Component {
 
   logOut(){
     if (sessionStorage.user) {
-      authenticationApi.logOut(this.redirectToSignIn)
+      authentication.logOut(this.redirectToSignIn)
     }
   }
 

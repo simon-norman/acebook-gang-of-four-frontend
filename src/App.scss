@@ -44,20 +44,21 @@ body {
   align-items: center;
 }
 
-nav.navbar-brand {
-  color: #20c997;
+.navbar-brand {
   font-weight: bold;
   font-size: x-large;
-  margin-bottom: 100px;
 }
 
-button.btn-outline-primary {
+.navbar-brand, .btn.btn-outline-primary, body a {
   color: #20c997;
+}
+
+.btn.btn-outline-primary {
   background-color: white;
   border-color:  #20c997;
 }
 
-button.btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
+.btn.btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
   background-color: #20c997;
   color: white;
   border-color:  white;
@@ -81,6 +82,12 @@ div.card-body {
   margin-bottom: 25px;
   white-space: nowrap;
   align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign-up-msg {
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
 }

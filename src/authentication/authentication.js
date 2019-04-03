@@ -1,6 +1,8 @@
 import api from '../api.js'
+import { Redirect } from 'react-router-dom'
+import React from 'react';
 
-const authenticationApi = {
+const authentication = {
   authenticate: function(user, url, callback) {
     api.call(user, 'POST', url, this.completeSignIn(callback))
   },
@@ -33,7 +35,14 @@ const authenticationApi = {
       sessionStorage.removeItem('user')  
       callback()
     })
+  },
+
+  redirectIfLoggedOut: function(component) {
+    if (sessionStorage.user) {
+      return component
+    }
+    return (<Redirect to='/sign-in'/>);
   }
 }
 
-export default authenticationApi;
+export default authentication;

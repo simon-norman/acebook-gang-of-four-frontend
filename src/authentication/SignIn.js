@@ -1,36 +1,39 @@
 import React, { Component } from 'react';
 import authentication from './authentication';
+import { Link } from 'react-router-dom'
 
-class Registration extends Component {
+class SignIn extends Component {
   constructor(props){
     super(props);
     this.state = {}
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.registerUser = this.registerUser.bind(this);
+    this.signInUser = this.signInUser.bind(this);
     this.redirectToTimeline = this.redirectToTimeline.bind(this);
   }
 
-  handleInputChange(event){
-    const name = event.target.name
-    const value = event.target.value
 
-    this.setState({[name]: value})
-  }
+handleInputChange(event){
+  const name = event.target.name
+  const value = event.target.value
 
-  registerUser(event) {
-    event.preventDefault();
-    authentication.register(this.state, this.redirectToTimeline)
-  }
+  this.setState({[name]: value})
+}
 
-  redirectToTimeline() {
-    this.props.history.push('/posts')
-  }
+signInUser(event) {
+  event.preventDefault();
+  authentication.signIn(this.state, this.redirectToTimeline)
+}
 
-  render() {
+redirectToTimeline() {
+  console.log(this.props)
+  this.props.history.push('/posts')
+}
+
+render() {
     return (
       <div className='center-form'>
-        <div className='form-title'>Sign Up</div>
-        <form onSubmit={this.registerUser}>
+        <div className='form-title'>Sign In</div>
+        <form onSubmit={this.signInUser}>
           <div className='form-item'>
             Email: 
             <input type='email' name='email' onChange={this.handleInputChange} className='form-control'/>
@@ -39,15 +42,15 @@ class Registration extends Component {
             Password: 
             <input type='password' name='password' onChange={this.handleInputChange} className='form-control'/>
           </div>
-          <div className='form-item'>
-            Confirm Password: 
-            <input type='password' name='password_confirmation' onChange={this.handleInputChange} className='form-control'/>
-          </div>
           <input type='submit' className="btn btn-outline-primary"/>
+          <div className='sign-up-msg'>
+            New to Acebook?
+            <Link to="/sign-up"> Sign up here!</Link>
+          </div>
         </form>
       </div>
     )
   }
 }
 
-export default Registration;
+export default SignIn;

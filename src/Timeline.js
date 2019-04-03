@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Post from './posts/Post';
 import postApi from './posts/postApi';
+import authentication from './authentication/authentication'
 
 class Timeline extends Component {
   constructor(props) {
@@ -17,13 +18,15 @@ class Timeline extends Component {
   }
 
   render() {
-    return (
-      <div>
-        { this.state.posts.map((post, i) => {
-          return <Post post={post} key={i}/>
-        }) }
-      </div>
-    )
+      return authentication.redirectIfLoggedOut(
+        <div>
+          { 
+            this.state.posts.map((post, i) => {
+              return <Post post={post} key={i}/>
+            }) 
+          }
+        </div>
+      )
     }
 }
 
