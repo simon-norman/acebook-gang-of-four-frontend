@@ -3,21 +3,23 @@ import Timeline from './Timeline'
 import NavBar from './NavBar'
 import './App.scss';
 import Registration from './authentication/Registration'
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SignIn from './authentication/SignIn';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+      <BrowserRouter>
         <NavBar/>
         <div className="body-content">
-          <BrowserRouter>
+          <Switch>
             <Route path='/sign-up' component={Registration}/>
             <Route path='/posts' component={Timeline}/>
             <Route path='/sign-in' component={SignIn}/>
-          </BrowserRouter>
+            </Switch>
         </div>
+        </BrowserRouter>
       </div>
     );
   }

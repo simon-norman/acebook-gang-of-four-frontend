@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import authenticationApi from './authentication/authenticationApi';
+import { withRouter } from 'react-router-dom';
 
 class NavBar extends Component {
   constructor(props){
@@ -30,4 +31,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
