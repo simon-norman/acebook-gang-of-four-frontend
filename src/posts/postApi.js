@@ -1,6 +1,11 @@
 import config from '../config.js';
+import api from '../api.js'
 
 const postApi = {
+  createPost: function(post, callback) {
+    api.call(post, 'POST', `${config.acebookApi}/posts/new`, callback)
+  },
+
   getPosts: function(callback) {
     const xhttp = new XMLHttpRequest();
     const url = `${config.acebookApi}/posts`

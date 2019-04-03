@@ -21,7 +21,8 @@ const authentication = {
       const userCredentials = JSON.stringify({
         'access-token': xhttp.getResponseHeader('access-token'),
         client: xhttp.getResponseHeader('client'),
-        uid: xhttp.getResponseHeader('uid')
+        uid: xhttp.getResponseHeader('uid'),
+        userId: JSON.parse(xhttp.response).data.id
       })
       sessionStorage.setItem('user', userCredentials)
 
