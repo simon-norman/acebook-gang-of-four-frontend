@@ -1,7 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
-.App {
-  text-align: center;
+body {
+  font-family: 'Roboto'
 }
 
 .App-logo {
@@ -38,14 +38,10 @@
   white-space: pre-line
 }
 
-body {
-  display: flex;
-  justify-content: center;
-}
-
 .body-content {
   display: flex;
-  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 nav.navbar-brand {
@@ -79,4 +75,32 @@ div.card-header {
 
 div.card-body {
   background-color: white;
+}
+
+.form-item {
+  margin-bottom: 25px;
+  white-space: nowrap;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-item input {
+  margin-left: 3%;
+}
+
+.center-form .btn {
+  width: 100%;
+}
+
+.center-form {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  margin-top: 75px;
+}
+
+.form-title {
+  font-size: 35px;
+  margin-bottom: 20px;
 }
