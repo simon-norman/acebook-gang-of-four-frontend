@@ -34,7 +34,15 @@ const mockXHR = {
   const oldHXR = window.XMLHttpRequest;
   window.XMLHttpRequest = jest.fn(() => mockXHR);
 
-it('should render a list of Post components', () => { 
+  const userCredentials = JSON.stringify({
+    'access-token': '12345',
+    client: 'chrome',
+    uid: '4'
+  })
+
+it('should render a list of Post components', () => {
+
+  sessionStorage.setItem('user', userCredentials)
   const wrapper = shallow(<Timeline />);
   mockXHR.onreadystatechange();
   wrapper.update();
