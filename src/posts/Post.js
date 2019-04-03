@@ -13,7 +13,7 @@ class Post extends Component {
           <div>{this.props.post.message}</div>
         </div>
         <div>
-          <UpdateButton email={this.props.post.user.email} />
+          <UpdateButton email={this.props.post.user.email} created_at={this.props.post.created_at} />
         </div>
       </div>
     );

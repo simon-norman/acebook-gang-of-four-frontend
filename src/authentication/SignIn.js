@@ -25,7 +25,6 @@ signInUser(event) {
 }
 
 redirectToTimeline() {
-  console.log(this.props)
   this.props.history.push('/posts')
 }
 

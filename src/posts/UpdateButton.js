@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class UpdateButton extends Component {
 
   render() {
-    const user = JSON.parse(sessionStorage.user);
-    if(user.uid === this.props.email) {
+   
+    if(this.can_update()) {
       return (
         <div>
           <button className="btn btn-outline-primary">Update</button>
@@ -14,6 +14,20 @@ class UpdateButton extends Component {
       return (null);
     }
   }
-}
+
+  can_update(){
+   return (this.belongsTo() && this.created_within_last())
+  }
+
+  belongsTo(){
+    const user = JSON.parse(sessionStorage.user);
+      return (user.uid === this.props.email)
+  }
+
+  created_within_last(){
+    const elapsed_time = ((new Date() - (new Date(this.props.created_at)-(60*60*1000)))/ (60000))
+      return (elapsed_time < (10))
+  }
+};
 
 export default UpdateButton;
