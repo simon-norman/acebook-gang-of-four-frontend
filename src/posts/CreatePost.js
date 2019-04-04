@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import postApi from './postApi.js'
+import postApi from './postApi.js';
+import { withRouter } from 'react-router-dom';
 
 class CreatePost extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class CreatePost extends Component {
 
       this.handleInputChange = this.handleInputChange.bind(this);
       this.createPost = this.createPost.bind(this);
-      this.redirectToTimeline = this.redirectToTimeline.bind(this);
+      this.refreshPosts = this.refreshPosts.bind(this);
     }
   
     handleInputChange(event){
@@ -25,11 +26,12 @@ class CreatePost extends Component {
           user_id: this.state.userId,
           message: this.state.message
         }
-        postApi.createPost({ post }, this.redirectToTimeline)
+        postApi.createPost({ post }, this.refreshPosts)
     }
 
-    redirectToTimeline() {
-        this.props.history.push('/posts')
+    refreshPosts() {
+      this.setState({message: ""})
+      this.props.getPosts()
     }
 
     render() {
@@ -38,7 +40,7 @@ class CreatePost extends Component {
             <form onSubmit={this.createPost}>
                 <div className='form-item'>
                     What's new?: 
-                    <textarea name='message' onChange={this.handleInputChange} className='form-control'/>
+                    <textarea name='message' value={this.state.message} onChange={this.handleInputChange} className='form-control'/>
                 </div>
                 <input type='submit' className="btn btn-outline-primary"/>   
             </form>
@@ -47,5 +49,5 @@ class CreatePost extends Component {
       }
   }
   
-  export default CreatePost;
+  export default withRouter(CreatePost);
   

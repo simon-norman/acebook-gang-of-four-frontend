@@ -9,6 +9,7 @@ class Timeline extends Component {
     super(props);
     this.state = { };
     this.state.posts = [];
+    this.getPosts = this.getPosts.bind(this);
     this.getPosts();
   }
 
@@ -21,7 +22,7 @@ class Timeline extends Component {
   render() {
       return authentication.redirectIfLoggedOut(
         <div>
-          <CreatePost />
+          <CreatePost getPosts={this.getPosts}/>
           <div>
             { 
               this.state.posts.map((post, i) => {
