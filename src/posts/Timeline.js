@@ -21,7 +21,7 @@ class Timeline extends Component {
       return (
         <div className='center-form'>
           <CreatePost getPosts={this.getPosts}/>
-          <div class='posts'>
+          <div className='posts'>
             { 
               this.state.posts.map((post, i) => {
                 return <Post post={post} key={i}/>
