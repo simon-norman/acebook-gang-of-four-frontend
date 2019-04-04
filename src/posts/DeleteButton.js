@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
+import postApi from './postApi';
 
 class DeleteButton extends Component {
   render() {
     if(this.canDelete()) {
       return (
-        <div>
+        <form onSubmit={this.deletePost}>
           <button className="btn btn-outline-primary">Delete</button>
-        </div>
+        </form>
       )
     } else {
       return ('');
     }
+  }
+
+  deletePost = (event) => {
+    event.preventDefault()
+    const that = this
+
+    postApi.deletePost({ id: this.props.postId }, this.props.getPosts)
   }
 
   canDelete() {

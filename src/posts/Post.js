@@ -15,7 +15,11 @@ class Post extends Component {
         </div>
         <div>
           <UpdateButton email={this.props.post.user.email} created_at={this.props.post.created_at} />
-          <DeleteButton email={this.props.post.user.email} />
+          <DeleteButton 
+            getPosts={this.props.getPosts} 
+            postId={this.props.post.id} 
+            email={this.props.post.user.email} 
+          />
         </div>
       </div>
     );
