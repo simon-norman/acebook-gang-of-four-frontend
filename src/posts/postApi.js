@@ -7,6 +7,12 @@ const postApi = {
     api.call(post, 'POST', `${config.acebookApi}/posts`, callback, authHeaders)
   },
 
+  updatePost: function(post, callback) {
+    const authHeaders = JSON.parse(sessionStorage.user)
+    console.log(post.post.id)
+    api.call(post, 'PATCH', `${config.acebookApi}/posts/${post.post.id}`, callback, authHeaders)
+  },
+
   getPosts: function(callback) {
     const xhttp = new XMLHttpRequest();
     const url = `${config.acebookApi}/posts`

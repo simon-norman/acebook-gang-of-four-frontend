@@ -4,7 +4,7 @@ class Post extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { post: this.props.post }
+    this.state = { post: this.props.post, date: new Date(this.props.post.created_at) }
   }
 
   updateMessage(newMessage) {
@@ -18,13 +18,13 @@ class Post extends Component {
       <div className="card" id={this.state.post.id}>
         <div className="card-header">
           <div>{this.state.post.user.email}</div>
-          <div>{this.state.post.created_at}</div>
+          <div>{this.state.date.toString()}</div>
         </div>
         <div className="card-body">
           <div>{this.state.post.message}</div>
         </div>
         <div>
-          <UpdateButton updateMessage={this.updateMessage} email={this.state.post.user.email} created_at={this.state.post.created_at} />
+          <UpdateButton postid={this.state.post.id} updateMessage={this.updateMessage} email={this.state.post.user.email} created_at={this.state.post.created_at} />
         </div>
       </div>
     );

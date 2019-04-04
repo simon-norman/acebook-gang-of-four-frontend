@@ -21,14 +21,15 @@ class UpdatePost extends Component {
   updatePost(event) {
       event.preventDefault();
       const post = {
-        user_id: this.state.userId,
+        id: this.props.postid,
         message: this.state.message
       }
       postApi.updatePost({ post }, this.updatePostMessage)
   }
 
   updatePostMessage() {
-      this.props.updateMessage(this.state.message);
+    this.props.toggleUpdate();
+    this.props.updateMessage(this.state.message);
   }
 
   render() {
