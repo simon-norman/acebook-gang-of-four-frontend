@@ -38,13 +38,6 @@ const authentication = {
       callback()
     })
   },
-
-  redirectIfLoggedOut: function(component) {
-    if (sessionStorage.user) {
-      return component
-    }
-    return (<Redirect to='/sign-in'/>);
-  }
 }
 
 export default authentication;

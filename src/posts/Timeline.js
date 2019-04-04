@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import CreatePost from './posts/CreatePost';
-import Post from './posts/Post';
-import postApi from './posts/postApi';
-import authentication from './authentication/authentication'
+import CreatePost from './CreatePost';
+import Post from './Post';
+import postApi from './postApi';
+import authentication from '../authentication/authentication'
 
 class Timeline extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class Timeline extends Component {
   }
 
   render() {
-      return authentication.redirectIfLoggedOut(
+      return (
         <div>
           <CreatePost getPosts={this.getPosts}/>
           <div>
