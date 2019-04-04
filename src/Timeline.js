@@ -14,6 +14,7 @@ class Timeline extends Component {
 
   getPosts = () => {
     postApi.getPosts((posts) => {
+      console.log("posts " + posts)
       this.setState({posts: posts});
     });
   }
