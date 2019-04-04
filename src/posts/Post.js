@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UpdateButton from './UpdateButton'
+import DeleteButton from './DeleteButton'
 class Post extends Component {
 
   constructor(props) {
@@ -26,6 +27,11 @@ class Post extends Component {
         </div>
         <div>
           <UpdateButton postid={this.state.post.id} updateMessage={this.updateMessage} email={this.state.post.user.email} created_at={this.state.post.created_at} />
+          <DeleteButton 
+            getPosts={this.props.getPosts} 
+            postId={this.props.post.id} 
+            email={this.props.post.user.email} 
+          />
         </div>
       </div>
     );

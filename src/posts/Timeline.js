@@ -24,7 +24,7 @@ class Timeline extends Component {
           <div className='posts'>
             { 
               this.state.posts.map((post, i) => {
-                return <Post post={post} key={i}/>
+                return <Post getPosts={this.getPosts} post={post} key={i}/>
               }) 
             }
           </div>

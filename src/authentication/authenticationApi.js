@@ -30,7 +30,7 @@ const authenticationApi = {
   },
 
   getLatestUserId: function(response) {
-    if (JSON.parse(response).data) {
+    if (response && JSON.parse(response).data) {
       return JSON.parse(response).data.id
     } else {
       return JSON.parse(sessionStorage.user).userId

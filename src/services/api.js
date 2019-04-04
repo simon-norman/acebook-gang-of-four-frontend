@@ -8,7 +8,7 @@ const api = {
     const xhttpWithHeaders = this.setHeaders(xhttp, headers)
 
     xhttpWithHeaders.onreadystatechange = function () {
-      if (xhttpWithHeaders.readyState === 4 && xhttpWithHeaders.status === 200) {
+      if (xhttpWithHeaders.readyState === 4 && xhttpWithHeaders.status.toString().charAt(0) === '2') {
         callback(xhttpWithHeaders)
       }
       else {console.log("This hasn't worked")}

@@ -30,6 +30,15 @@ const postApi = {
     })
   },
 
+  deletePost: function(post, callback) {
+    authenticationApi.call({ 
+      data: post, 
+      verb: 'DELETE', 
+      url: `${config.acebookApi}/posts/${post.id}`, 
+      callback
+    })
+  },
+
   extractPostsFromResponse: function(callback) {
     return function (xhttp) {
       const posts = JSON.parse(xhttp.response)
