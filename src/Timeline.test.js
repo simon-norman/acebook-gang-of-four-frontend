@@ -10,7 +10,7 @@ const mockXHR = {
   status: 200,
   readyState: 4,
   setRequestHeader: jest.fn(),
-  responseText: JSON.stringify(
+  response: JSON.stringify(
     [
       {
       id: 1,
