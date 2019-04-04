@@ -34,11 +34,14 @@ class CreatePost extends Component {
         return (
           <div>
             <form onSubmit={this.createPost}>
-                <div className='form-item'>
-                    What's new?: 
-                    <textarea name='message' value={this.state.message} onChange={this.handleInputChange} className='form-control'/>
-                </div>
-                <input type='submit' className="btn btn-outline-primary"/>   
+              <textarea 
+                name='message' 
+                placeholder="What's new?" 
+                value={this.state.message} 
+                onChange={this.handleInputChange} 
+                className='form-control'
+              />
+                <input type='submit' className="btn btn-outline-primary new-post-submit"/>
             </form>
           </div>
         )

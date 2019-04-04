@@ -14,12 +14,14 @@ class App extends Component {
       <BrowserRouter>
         <NavBar/>
         <div className="body-content">
-          <Switch>
-            <PrivateRoute exact path='/' component={Timeline}/>
-            <Route path='/sign-up' component={Registration}/>
-            <PrivateRoute path='/posts' component={Timeline}/>
-            <Route path='/sign-in' component={SignIn}/>
-          </Switch>
+          <div className='centered-content'>
+            <Switch>
+              <PrivateRoute exact path='/' component={Timeline}/>
+              <Route path='/sign-up' component={Registration}/>
+              <PrivateRoute path='/posts' component={Timeline}/>
+              <Route path='/sign-in' component={SignIn}/>
+            </Switch>
+          </div>
         </div>
         </BrowserRouter>
       </div>

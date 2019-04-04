@@ -38,10 +38,22 @@ body {
   white-space: pre-line
 }
 
+form, .centered-content div  {
+  width: 100%;
+}
+
 .body-content {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.centered-content {
+  width: 400px;
+}
+
+.posts {
+  margin-top: 30px;
 }
 
 .navbar-brand {
@@ -67,7 +79,6 @@ body {
 div.card {
   background-color: #20C997; 
   margin-bottom: 20px;
-  width: 500px;
 }
 
 div.card-header {
@@ -92,8 +103,14 @@ div.card-body {
   justify-content: space-between;
 }
 
+.new-post-submit {
+  margin-top: 15px;
+  width: 100%;
+}
+
 .form-item input {
   margin-left: 3%;
+  flex: 1;
 }
 
 .center-form .btn {
