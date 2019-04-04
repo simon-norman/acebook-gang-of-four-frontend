@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import Timeline from './Timeline'
+import Timeline from './posts/Timeline'
 import NavBar from './NavBar'
 import './App.scss';
 import Registration from './authentication/Registration'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SignIn from './authentication/SignIn';
+import PrivateRoute from './services/PrivateRoute'
 
 class App extends Component {
   render() {
@@ -14,9 +15,9 @@ class App extends Component {
         <NavBar/>
         <div className="body-content">
           <Switch>
-            <Route exact path='/' component={SignIn}/>
+            <PrivateRoute exact path='/' component={Timeline}/>
             <Route path='/sign-up' component={Registration}/>
-            <Route path='/posts' component={Timeline}/>
+            <PrivateRoute path='/posts' component={Timeline}/>
             <Route path='/sign-in' component={SignIn}/>
           </Switch>
         </div>

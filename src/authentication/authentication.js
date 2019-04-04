@@ -1,7 +1,5 @@
-import api from '../api.js'
+import api from '../services/api.js'
 import config from '../config.js'
-import { Redirect } from 'react-router-dom'
-import React from 'react';
 
 const authentication = {
   authenticate: function(user, url, callback) {
@@ -38,13 +36,6 @@ const authentication = {
       callback()
     })
   },
-
-  redirectIfLoggedOut: function(component) {
-    if (sessionStorage.user) {
-      return component
-    }
-    return (<Redirect to='/sign-in'/>);
-  }
 }
 
 export default authentication;

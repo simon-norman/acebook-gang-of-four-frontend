@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import CreatePost from './posts/CreatePost';
-import Post from './posts/Post';
-import postApi from './posts/postApi';
-import authentication from './authentication/authentication'
+import CreatePost from './CreatePost';
+import Post from './Post';
+import postApi from './postApi';
 
 class Timeline extends Component {
   constructor(props) {
@@ -12,16 +11,17 @@ class Timeline extends Component {
     this.getPosts();
   }
 
-  getPosts() {
+  getPosts = () => {
     postApi.getPosts((posts) => {
+      console.log("posts " + posts)
       this.setState({posts: posts});
     });
   }
 
   render() {
-      return authentication.redirectIfLoggedOut(
+      return (
         <div>
-          <CreatePost />
+          <CreatePost getPosts={this.getPosts}/>
           <div>
             { 
               this.state.posts.map((post, i) => {

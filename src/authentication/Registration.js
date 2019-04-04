@@ -5,24 +5,21 @@ class Registration extends Component {
   constructor(props){
     super(props);
     this.state = {}
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.registerUser = this.registerUser.bind(this);
-    this.redirectToTimeline = this.redirectToTimeline.bind(this);
   }
 
-  handleInputChange(event){
+  handleInputChange = (event) => {
     const name = event.target.name
     const value = event.target.value
 
     this.setState({[name]: value})
   }
 
-  registerUser(event) {
+  registerUser = (event) => {
     event.preventDefault();
     authentication.register(this.state, this.redirectToTimeline)
   }
 
-  redirectToTimeline() {
+  redirectToTimeline = () => {
     this.props.history.push('/posts')
   }
 

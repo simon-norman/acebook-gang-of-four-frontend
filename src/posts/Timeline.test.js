@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {shallow} from 'enzyme';
 import Timeline from './Timeline.js';
-import Post from './posts/Post';
-import '../test-setup.js';
+import Post from './Post';
+import '../../test-setup.js';
 
 const mockXHR = {
   open: jest.fn(),
@@ -10,7 +10,7 @@ const mockXHR = {
   status: 200,
   readyState: 4,
   setRequestHeader: jest.fn(),
-  responseText: JSON.stringify(
+  response: JSON.stringify(
     [
       {
       id: 1,
