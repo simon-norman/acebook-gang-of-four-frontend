@@ -4,49 +4,39 @@ body {
   font-family: 'Roboto'
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .post {
   white-space: pre-line
 }
 
+form, .centered-content div  {
+  width: 100%;
+}
+
 .body-content {
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.navbar-brand {
+.centered-content {
+  width: 400px;
+}
+
+.posts {
+  margin-top: 30px;
+}
+
+.navbar-item.logo {
   font-weight: bold;
   font-size: x-large;
+}
+
+.navbar-item {
+  font-size: large;
+  margin-right: 20px;
 }
 
 .navbar-brand, .btn.btn-outline-primary, body a {
@@ -67,7 +57,6 @@ body {
 div.card {
   background-color: #20C997; 
   margin-bottom: 20px;
-  width: 500px;
 }
 
 div.card-header {
@@ -82,32 +71,39 @@ div.card-body {
   margin-bottom: 25px;
   white-space: nowrap;
   align-items: center;
-  display: flex;
   justify-content: space-between;
 }
 
 .sign-up-msg {
   margin-top: 10px;
-  display: flex;
   justify-content: space-between;
+}
+
+.new-post-submit {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.form-title {
+  font-size: 35px;
+  margin-bottom: 20px;
 }
 
 .form-item input {
   margin-left: 3%;
+  flex: 1;
 }
 
 .center-form .btn {
   width: 100%;
 }
 
-.center-form {
+.center-form, .body-content, .form-item, .sign-up-msg {
   display: flex;
+}
+
+.center-form {
   align-items: center;
   flex-flow: column;
   margin-top: 75px;
-}
-
-.form-title {
-  font-size: 35px;
-  margin-bottom: 20px;
 }

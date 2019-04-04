@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import authentication from './authentication/authentication';
+import authentication from './authentication/authenticationApi';
 import { withRouter } from 'react-router-dom';
 
 class NavBar extends Component {
@@ -8,7 +8,11 @@ class NavBar extends Component {
     return (
       <nav className="navbar navbar-default navbar-fixed-top bg-light">
         <div className="container">
-          <a className='navbar-brand' href="/">Acebook</a>
+          <div className="links">
+            <a className='navbar-item logo' href="/">Acebook</a>
+            <a className='navbar-item' href="/sign-up">Sign up</a>
+            <a className='navbar-item' href="/sign-in">Sign in</a>
+          </div>
           <button onClick={this.logOut} className="btn btn-outline-primary">Log out</button>
         </div>
       </nav>
