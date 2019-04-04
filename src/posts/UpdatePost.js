@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import postApi from '../posts/postApi'
 class UpdatePost extends Component {
   constructor(props) {
     super(props);
@@ -28,7 +28,7 @@ class UpdatePost extends Component {
   }
 
   updatePostMessage() {
-      // update post with new message
+      this.props.updateMessage(this.state.message);
   }
 
   render() {

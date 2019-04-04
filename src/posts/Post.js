@@ -7,6 +7,12 @@ class Post extends Component {
     this.state = { post: this.props.post }
   }
 
+  updateMessage(newMessage) {
+    const post = this.state;
+    post.message = newMessage;
+    this.setState({post});
+  }
+
   render() {
     return (
       <div className="card" id={this.state.post.id}>
@@ -18,7 +24,7 @@ class Post extends Component {
           <div>{this.state.post.message}</div>
         </div>
         <div>
-          <UpdateButton email={this.state.post.user.email} created_at={this.state.post.created_at} />
+          <UpdateButton updateMessage={this.updateMessage} email={this.state.post.user.email} created_at={this.state.post.created_at} />
         </div>
       </div>
     );

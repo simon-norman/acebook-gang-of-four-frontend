@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import UpdatePost from './UpdatePost'
 class UpdateButton extends Component {
 
   render() {
@@ -7,7 +7,7 @@ class UpdateButton extends Component {
     if(this.can_update()) {
       return (
         <div>
-          <button className="btn btn-outline-primary">Update</button>
+          <button onClick={this.updatePost} className="btn btn-outline-primary">Update</button>
         </div>
       )
     } else {
@@ -15,7 +15,12 @@ class UpdateButton extends Component {
     }
   }
 
+  updatePost() {
+    return UpdatePost(this.props.updateMessage)
+  }
+
   can_update(){
+    console.log("BELONG: " + this.belongsTo() + "CREATED: " + this.created_within_last());
    return (this.belongsTo() && this.created_within_last())
   }
 
@@ -25,8 +30,9 @@ class UpdateButton extends Component {
   }
 
   created_within_last(){
-    const elapsed_time = ((new Date() - (new Date(this.props.created_at)-(60*60*1000)))/ (60000))
-      return (elapsed_time < (10))
+    const elapsed_time = ((new Date() - (new Date(this.props.created_at)))/ (60000))
+    console.log("TIME: " + elapsed_time);
+    return (elapsed_time < (10))
   }
 };
 
