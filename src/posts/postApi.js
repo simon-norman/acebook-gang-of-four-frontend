@@ -9,8 +9,8 @@ const postApi = {
 
   updatePost: function(post, callback) {
     const authHeaders = JSON.parse(sessionStorage.user)
-    console.log(post.post.id)
     api.call(post, 'PATCH', `${config.acebookApi}/posts/${post.post.id}`, callback, authHeaders)
+    callback()
   },
 
   getPosts: function(callback) {

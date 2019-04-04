@@ -26,6 +26,7 @@ class CreatePost extends Component {
     }
 
     refreshPosts = () => {
+      console.log('refreshPosts')
       this.setState({message: ""})
       this.props.getPosts()
     }

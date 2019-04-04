@@ -5,12 +5,15 @@ class Post extends Component {
   constructor(props) {
     super(props);
     this.state = { post: this.props.post, date: new Date(this.props.post.created_at) }
+    this.updateMessage = this.updateMessage.bind(this)
   }
 
   updateMessage(newMessage) {
-    const post = this.state;
-    post.message = newMessage;
-    this.setState({post});
+    const state = this.state;
+    console.log(newMessage)
+    console.log(state)
+    state.post.message = newMessage;
+    this.setState({state});
   }
 
   render() {

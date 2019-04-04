@@ -41,7 +41,7 @@ class UpdateButton extends Component {
 
   created_within_last(){
     const elapsed_time = ((new Date() - (new Date(this.props.created_at)))/ (60000))
-    return (elapsed_time < (100))
+    return (elapsed_time < (10))
   }
 };
 
