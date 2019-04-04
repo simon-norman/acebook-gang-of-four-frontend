@@ -30,7 +30,6 @@ class UpdateButton extends Component {
   }
 
   can_update(){
-    console.log("BELONG: " + this.belongsTo() + "CREATED: " + this.created_within_last());
    return (this.belongsTo() && this.created_within_last())
   }
 

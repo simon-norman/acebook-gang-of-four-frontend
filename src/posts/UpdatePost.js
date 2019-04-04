@@ -28,7 +28,6 @@ class UpdatePost extends Component {
   }
 
   updatePostMessage() {
-    console.log('updatePostMessage')
     this.props.toggleUpdate();
     this.props.updateMessage(this.state.message);
   }

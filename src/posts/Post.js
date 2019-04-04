@@ -10,8 +10,6 @@ class Post extends Component {
 
   updateMessage(newMessage) {
     const state = this.state;
-    console.log(newMessage)
-    console.log(state)
     state.post.message = newMessage;
     this.setState({state});
   }

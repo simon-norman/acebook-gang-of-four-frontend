@@ -18,7 +18,6 @@ const postApi = {
       url: `${config.acebookApi}/posts/${post.post.id}`, 
       callback
     })
-      
     callback()
   },
 
