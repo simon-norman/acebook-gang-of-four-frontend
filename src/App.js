@@ -14,7 +14,7 @@ class App extends Component {
         <NavBar/>
         <div className="body-content">
           <Switch>
-            <Route path='/' component={SignIn}/>
+            <Route exact path='/' component={SignIn}/>
             <Route path='/sign-up' component={Registration}/>
             <Route path='/posts' component={Timeline}/>
             <Route path='/sign-in' component={SignIn}/>
