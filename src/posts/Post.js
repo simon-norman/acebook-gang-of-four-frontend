@@ -2,18 +2,23 @@ import React, { Component } from 'react';
 import UpdateButton from './UpdateButton'
 class Post extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { post: this.props.post }
+  }
+
   render() {
     return (
-      <div className="card" id={this.props.post.id}>
+      <div className="card" id={this.state.post.id}>
         <div className="card-header">
-          <div>{this.props.post.user.email}</div>
-          <div>{this.props.post.created_at}</div>
+          <div>{this.state.post.user.email}</div>
+          <div>{this.state.post.created_at}</div>
         </div>
         <div className="card-body">
-          <div>{this.props.post.message}</div>
+          <div>{this.state.post.message}</div>
         </div>
         <div>
-          <UpdateButton email={this.props.post.user.email} created_at={this.props.post.created_at} />
+          <UpdateButton email={this.state.post.user.email} created_at={this.state.post.created_at} />
         </div>
       </div>
     );
