@@ -1,5 +1,5 @@
 import config from '../config.js';
-import api from '../api.js'
+import api from '../services/api.js'
 
 const postApi = {
   createPost: function(post, callback) {

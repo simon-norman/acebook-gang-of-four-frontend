@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {shallow} from 'enzyme';
 import Timeline from './Timeline.js';
-import Post from './posts/Post';
-import '../test-setup.js';
+import Post from './Post';
+import '../../test-setup.js';
 
 const mockXHR = {
   open: jest.fn(),

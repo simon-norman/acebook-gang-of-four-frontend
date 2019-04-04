@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import CreatePost from './CreatePost';
 import Post from './Post';
 import postApi from './postApi';
-import authentication from '../authentication/authentication'
 
 class Timeline extends Component {
   constructor(props) {

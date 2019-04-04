@@ -1,7 +1,5 @@
-import api from '../api.js'
+import api from '../services/api.js'
 import config from '../config.js'
-import { Redirect } from 'react-router-dom'
-import React from 'react';
 
 const authentication = {
   authenticate: function(user, url, callback) {
