@@ -16,8 +16,6 @@ class DeleteButton extends Component {
 
   deletePost = (event) => {
     event.preventDefault()
-    const that = this
-
     postApi.deletePost({ id: this.props.postId }, this.props.getPosts)
   }
 
