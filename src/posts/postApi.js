@@ -1,15 +1,23 @@
 import config from '../config.js';
-import api from '../services/api.js'
+import authenticationApi from '../authentication/authenticationApi'
 
 const postApi = {
   createPost: function(post, callback) {
-    const authHeaders = JSON.parse(sessionStorage.user)
-    api.call(post, 'POST', `${config.acebookApi}/posts`, callback, authHeaders)
+    authenticationApi.call({ 
+      data: post, 
+      verb: 'POST', 
+      url: `${config.acebookApi}/posts`, 
+      callback
+    })
   },
 
   getPosts: function(callback) {
-    const authHeaders = JSON.parse(sessionStorage.user)
-    api.call("", 'GET', `${config.acebookApi}/posts`, this.extractPostsFromResponse(callback), authHeaders)
+    authenticationApi.call({ 
+      data: '', 
+      verb: 'GET', 
+      url: `${config.acebookApi}/posts`, 
+      callback: this.extractPostsFromResponse(callback)
+    })
   },
 
   extractPostsFromResponse: function(callback) {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import authentication from './authentication';
+import authentication from './authenticationApi';
 
 class Registration extends Component {
   constructor(props){

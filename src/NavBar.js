@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import authentication from './authentication/authentication';
+import authentication from './authentication/authenticationApi';
 import { withRouter } from 'react-router-dom';
 
 class NavBar extends Component {
