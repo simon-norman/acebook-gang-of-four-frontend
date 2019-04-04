@@ -12,8 +12,13 @@ const postApi = {
   },
 
   updatePost: function(post, callback) {
-    const authHeaders = JSON.parse(sessionStorage.user)
-    api.call(post, 'PATCH', `${config.acebookApi}/posts/${post.post.id}`, callback, authHeaders)
+    authenticationApi.call({
+      data: post, 
+      verb: 'PATCH', 
+      url: `${config.acebookApi}/posts/${post.post.id}`, 
+      callback
+    })
+      
     callback()
   },
 
