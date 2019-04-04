@@ -13,6 +13,7 @@ class Timeline extends Component {
 
   getPosts = () => {
     postApi.getPosts((posts) => {
+      this.setState({posts: []});
       this.setState({posts: posts});
     });
   }

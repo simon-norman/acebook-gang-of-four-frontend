@@ -21,7 +21,7 @@ const api = {
       xhttp.setRequestHeader(headerKey, headers[headerKey]);
     }
     return xhttp
-  }
+  }, 
 }
 
 export default api;
