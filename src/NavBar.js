@@ -3,11 +3,6 @@ import authentication from './authentication/authentication';
 import { withRouter } from 'react-router-dom';
 
 class NavBar extends Component {
-  constructor(props){
-    super(props);
-    this.logOut = this.logOut.bind(this);
-    this.redirectToSignIn = this.redirectToSignIn.bind(this);
-  }
 
   render() {
     return (
@@ -20,13 +15,13 @@ class NavBar extends Component {
     );
   }
 
-  logOut(){
+  logOut = () => {
     if (sessionStorage.user) {
       authentication.logOut(this.redirectToSignIn)
     }
   }
 
-  redirectToSignIn() {
+  redirectToSignIn = () => {
     this.props.history.push('/sign-in')
   }
 }

@@ -9,11 +9,10 @@ class Timeline extends Component {
     super(props);
     this.state = { };
     this.state.posts = [];
-    this.getPosts = this.getPosts.bind(this);
     this.getPosts();
   }
 
-  getPosts() {
+  getPosts = () => {
     postApi.getPosts((posts) => {
       this.setState({posts: posts});
     });

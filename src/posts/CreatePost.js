@@ -7,20 +7,16 @@ class CreatePost extends Component {
       super(props);
       const sessionUser = sessionStorage.user
       this.state = { userId: JSON.parse(sessionUser).userId };
-
-      this.handleInputChange = this.handleInputChange.bind(this);
-      this.createPost = this.createPost.bind(this);
-      this.refreshPosts = this.refreshPosts.bind(this);
     }
   
-    handleInputChange(event){
+    handleInputChange = (event) => {
         const name = event.target.name
         const value = event.target.value
       
         this.setState({[name]: value})
     }
 
-    createPost(event) {
+    createPost = (event) => {
         event.preventDefault();
         const post = {
           user_id: this.state.userId,
@@ -29,7 +25,7 @@ class CreatePost extends Component {
         postApi.createPost({ post }, this.refreshPosts)
     }
 
-    refreshPosts() {
+    refreshPosts = () => {
       this.setState({message: ""})
       this.props.getPosts()
     }
