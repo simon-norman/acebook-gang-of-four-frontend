@@ -13,16 +13,15 @@ class Timeline extends Component {
 
   getPosts = () => {
     postApi.getPosts((posts) => {
-      console.log("posts " + posts)
       this.setState({posts: posts});
     });
   }
 
   render() {
       return (
-        <div>
+        <div className='center-form'>
           <CreatePost getPosts={this.getPosts}/>
-          <div>
+          <div class='posts'>
             { 
               this.state.posts.map((post, i) => {
                 return <Post post={post} key={i}/>
