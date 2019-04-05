@@ -28,6 +28,16 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.
 
+### How to deploy
+
+Pushing to staging will automatically trigger a push to the staging environment, hosted on Heroku. The admin page within Heroku for this is https://dashboard.heroku.com/apps/acebook-testing and the staging app itself is https://acebook-testing.herokuapp.com.
+
+Pushing to master will automatically trigger a push to the production environment, hosted on Heroku. The admin page within Heroku for this is https://dashboard.heroku.com/apps/acebook-production and the production app itself is https://acebook-production.herokuapp.com.
+
+### Links to backend and github for backend
+
+The production backend is https://acebook-gang-of-four.herokuapp.com, and the github is https://github.com/acodeguy/acebook-rails-gang-of-four. 
+
 ### Further documentation
 
 The wiki for the project, which includes information on how the app as a whole (frontend and backend) is structured, can be found in the api github wiki here: https://github.com/acodeguy/acebook-rails-gang-of-four/wiki
