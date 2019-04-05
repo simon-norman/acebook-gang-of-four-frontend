@@ -5,7 +5,7 @@ class DeleteButton extends Component {
   render() {
     if(this.canDelete()) {
       return (
-        <form onSubmit={this.deletePost}>
+        <form className="delete-form" onSubmit={this.deletePost}>
           <button className="btn btn-outline-primary">Delete</button>
         </form>
       )
