@@ -22,5 +22,5 @@ it('should render div for a post', () => {
       ;
 
     const wrapper = shallow(<Post post={mockPost} />);
-    expect(wrapper.html()).toEqual('<div class="card" id="1"><div class="card-header"><div>an email</div><div>2019-03-22</div></div><div class="card-body"><div>Hello</div></div><div></div></div>');
+    expect(wrapper.html()).toEqual(`<div class="card" id="1"><div class="card-header"><div>an email</div><div>22nd March 2019, 12:00 am</div></div><div class="card-body"><div>Hello</div></div><div></div></div>`);
 })
