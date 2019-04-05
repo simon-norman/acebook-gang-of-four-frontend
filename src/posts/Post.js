@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import UpdateButton from './UpdateButton'
-import DeleteButton from './DeleteButton'
+import DeleteButton from './DeleteButton';
+import moment from 'moment';
 class Post extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { post: this.props.post, date: new Date(this.props.post.created_at) }
+    this.state = { post: this.props.post, date: moment(this.props.post.created_at).format('Do MMMM YYYY, h:mm a') }
     this.updateMessage = this.updateMessage.bind(this)
   }
 
