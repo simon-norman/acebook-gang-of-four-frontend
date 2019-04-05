@@ -55,11 +55,11 @@ form, .centered-content div  {
 }
 
 div.card {
-  background-color: #20C997; 
   margin-bottom: 20px;
 }
 
 div.card-header {
+  background-color: #20C997; 
   color: white;
 }
 
@@ -80,6 +80,15 @@ div.card-body {
   justify-content: space-between;
 }
 
+.post-buttons {
+  display: flex;
+  padding: 15px;
+}
+
+.delete-form {
+  padding-left: 15px;
+}
+
 .new-post-submit {
   margin-top: 15px;
   width: 100%;
@@ -93,6 +102,16 @@ div.card-body {
 .form-item input {
   margin-left: 3%;
   flex: 1;
+}
+
+.update-post-form {
+  background: #f0f0f0;
+  padding: 15px;
+  border-top: 1px solid rgba(0,0,0,.125);
+}
+
+.update-post-form .btn {
+  margin-top: 15px;
 }
 
 .center-form .btn {
